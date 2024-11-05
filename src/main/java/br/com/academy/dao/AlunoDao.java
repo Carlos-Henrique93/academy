@@ -6,4 +6,6 @@ import br.com.academy.model.Aluno;
 
 public interface AlunoDao extends JpaRepository<Aluno, Integer> {
 
+	Aluno getOne(Integer id);
+
 }
