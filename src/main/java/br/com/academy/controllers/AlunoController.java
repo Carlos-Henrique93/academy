@@ -35,7 +35,15 @@ public class AlunoController {
             return mv;
         }
         alunorepositorio.save(aluno);
-        return new ModelAndView("redirect:/listAlunos");
+        return new ModelAndView("redirect:alunos-adicionados");
+    }
+    
+    @GetMapping("alunos-adicionados")
+    public ModelAndView listagemAlunos() {
+    	ModelAndView mv = new ModelAndView();
+    	mv.setViewName("Alunos/listAlunos");
+    	mv.addObject("alunosList", alunorepositorio.findAll());
+    	return mv;
     }
 
 }
