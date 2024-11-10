@@ -30,16 +30,14 @@
         </button>
 
         <div id="navMobile" class="collapse navbar-collapse justify-content-end">
-            <a class="btn-nav nav-item nav-link" ><i class="fas fa-home"></i> Home</a>
+            <a class="btn-nav nav-item nav-link navbar-brand" th:href="@{/}"><i class="fas fa-home"></i> Home</a>        
             <a class="btn-nav nav-item nav-link" th:href="@{inserirAlunos}"><i class="fas fa-user-graduate"></i> Cadastrar Aluno</a>
-            <a class="btn-nav nav-item nav-link"><i class="fas fa-search"></i> Pesquisar Aluno</a>
+           <a data-toggle="modal" data-target="#modalPesquisa" class="btn-nav nav-item nav-link"><i class="fas fa-search"></i> Pesquisar Aluno</a>
             <a class="btn-nav nav-item nav-link btn-danger"><i class="fas fa-times"></i> Sair</a>
         </div>
     </nav>
 </header>
 
-	
-	
 		<!-- footer -->
 	<footer th:fragment="rodape">
 			<div class="rodape">
