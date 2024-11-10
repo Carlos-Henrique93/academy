@@ -3,18 +3,39 @@ package br.com.academy.model;
 import br.com.academy.Enums.Curso;
 import br.com.academy.Enums.Status;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 
 @Entity
 public class Aluno {
-	@Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(nullable = false)
+    @Column(name = "nome")
+    @NotBlank(message = "O nome não pode ser vazio!")
+    @Size(min = 5, max = 35, message = "O nome deve conter no mínimo 5 caracteres.")
     private String nome;
-    
-    @Enumerated(EnumType.STRING)
+
+    @Enumerated(EnumType.ORDINAL)
+    @NotNull(message = "O campo Curso não pode ser nulo.")
     private Curso curso;
+
+    @Enumerated(EnumType.ORDINAL)
+    @NotNull(message = "O campo Status não pode ser nulo.")
+    private Status status;
+
+    @NotBlank(message = "O campo Matrícula não pode ser vazio!")
+    private String matricula;
+
+    @NotBlank(message = "O campo Turno não pode ser vazio!")
+    @Size(min = 4, message = "O turno deve ter no mínimo 4 caracteres.")
+    private String turno;
+
+    // Getters e setters
     
     public Long getId() {
 		return id;
@@ -64,14 +85,6 @@ public class Aluno {
 		this.turno = turno;
 	}
 
-	private String matricula;
-    
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private Status status;
-    
-    @Column(nullable = false)
-    private String turno;
 
-    // Getters e setters...
+
 }
