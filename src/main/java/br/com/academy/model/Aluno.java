@@ -27,14 +27,14 @@ public class Aluno {
     @Enumerated(EnumType.ORDINAL)
     @NotNull(message = "O campo Status não pode ser nulo.")
     private Status status;
-
+    
     @NotBlank(message = "O campo Matrícula não pode ser vazio!")
     private String matricula;
-
+    
+    
     @NotBlank(message = "O campo Turno não pode ser vazio!")
     @Size(min = 4, message = "O turno deve ter no mínimo 4 caracteres.")
     private String turno;
-
     // Getters e setters
     
     public Long getId() {

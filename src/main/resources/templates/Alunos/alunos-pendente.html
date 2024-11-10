@@ -22,7 +22,7 @@
 
 	<div class="container" style="margin-top: 50px">
 
-		<h3>Lista de Alunos Adicionados</h3>
+		<h3>Lista de Alunos Pendentes</h3>
 		<hr>
 		<table class="table table-bordered table-hover">
 			<thead>
@@ -37,7 +37,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="aluno : ${alunosList}">
+				<tr th:each="aluno : ${alunosPendente}">
 					<td th:text="${aluno.nome}"></td>
 					<td th:text="${aluno.curso}"></td>
 					<td th:text="${aluno.matricula}"></td>

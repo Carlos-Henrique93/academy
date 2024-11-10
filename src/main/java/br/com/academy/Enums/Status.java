@@ -6,7 +6,7 @@ public enum Status {
     PENDENTE(2),
     CONCLUIDO(3),
     CANCELADO(4),
-    EM_ANDAMENTO(5);
+    TRANCADO(5);
 
     private final int codigo;
 
